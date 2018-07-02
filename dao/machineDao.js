@@ -24,8 +24,8 @@ module.exports = (app) => {
                         newPerson.save( (err) => {
                             if(err) res.status(400).send('Person save error');
                             let product = new Product();
-                            product.name  = req.body.name;
-                            product.price = req.body.price; 
+                            product.name  = req.body.product.name;
+                            product.price = req.body.product.price; 
                             product.save( (err) => {
                                 if (err) res.status(400).send('Product save error');
                                 res.json('Transaction OK');
